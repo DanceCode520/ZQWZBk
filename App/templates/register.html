@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <script src="{{ url_for('static',filename='../static/framework/jquery.min.js') }}"></script>
+    <style>
+        body {
+            background: url("../static/images/bk4.jpg") no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .register {
+            position: absolute;
+            left: 34%;
+            top: 10%;
+            margin-bottom: 50px;
+            right: 34%;
+            margin: -50px 0 0 -50px;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 0px 8px 5px 6px;
+            background-color: white;
+        }
+
+        .register input {
+            width: 100%;
+            height: 30px;
+            margin: 5px 0px 10px 0px;
+            border: 1px solid lightgray;
+            outline: none;
+            border-radius: 4px;
+        }
+
+        .register input.loginbut {
+            color: white;
+            width: 46%;
+            margin: 2%;
+            background: #3388ff;
+            float: left;
+            height: 30px !important;
+            border-radius: 5px;
+            border: 0px;
+            cursor: pointer;
+        }
+
+        {##}
+        {#.register input.loginbut:hover {#}
+        {#    opacity: 1.0;#}
+        {#    background: #3388ff;#}
+        {#  #}
+        .sex {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .sex label {
+            vertical-align: middle;
+        }
+
+        .sex input {
+            margin: 0px;
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .myclass span {
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            padding: 2px 4px;
+            margin-right: 5px;
+            background-color: #FFB800;
+            border-radius: 2px;
+            box-shadow: 2px 2px #908a8a;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .selectEle {
+            background-color: #67C23A !important;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="register">
+    <h1 style="text-align: center">教师注册信息表</h1>
+    <input placeholder="请输入姓名" type="text" name="name"/>
+    <input placeholder="请输入手机号" type="tel" name="phone"/>
+    <span>请选择生日：</span>
+    <input placeholder="请选择生日" type="date" name=""/>
+    <div class="sex"><span style="vertical-align: middle;">性 别：</span>
+        <input type="radio" name="sex" ng-model="user.sex" ng-checked="user.sex==1" value="1"
+               id="one1"><label
+                for="one1">男</label>
+        <input style="margin-left: 15px" type="radio" name="sex" ng-model="user.sex" value="0" ng-checked="user.sex==0"
+               id="one0"><label
+                for="one0">女</label>
+    </div>
+    <input type="text" placeholder="请输入住址"
+           ng-model="teacher.comment">
+    <input placeholder="请输入民族" type="text" name=""/>
+    <div class="myclass"><p>所教班级：</p>
+        {% for class in allClass %}
+            <span>{{ class }}</span>
+        {% endfor %}
+    </div>
+    <input placeholder="请输入密码" type="Password" name="pwd"/>
+    <input placeholder="请确认密码" type="password" name="pwd2"/>
+    <input class="loginbut" type="submit" value="提  交"/>
+    <input class="loginbut" type="submit" value="返  回"/></div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("body").click(function (e) {
+            if (e.target.innerText.length == 4) {
+                console.log(e.target.class)
+                $(e.target).toggleClass('selectEle');  // 然后为被点击元素添加selected样式
+            }
+        });
+
+        $(".register").hide(30,function () {
+            $(".register").show(900);
+        })
+    })
+</script>
+</body>
+</html>

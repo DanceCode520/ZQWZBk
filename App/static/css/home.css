@@ -1,0 +1,64 @@
+img.main {
+    cursor: pointer;
+}
+
+.bkcontent {
+    margin: 0 auto;
+    width: 40%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+.bkcontent select {
+    width: auto;
+    padding: 0 2%;
+    margin: 0;
+}
+
+.bkcontent div {
+    margin: 10px;
+}
+
+.bkcontent div img {
+    width: 100%;
+}
+
+body {
+    background: url("../images/logbk.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.logbk {
+    background: url("../images/bk1.jpg") no-repeat;
+    /*background-size: cover;*/
+    width: 100%;
+    height: 100%;
+    /*position: relative;*/
+}
+
+
+div.cover {
+    border: 3px solid white;
+    border-radius: 25px;
+    width: 18%;
+    height: 154px;
+    margin: auto;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+}
+
+div.cover p {
+    margin: 5px;
+}
+
+div.cover p input {
+    border-radius: 3px;
+    width: 220px;
+    height: 20px;
+}
